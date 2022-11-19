@@ -152,16 +152,10 @@ def solve_b(data):
                 cur += db[posY+1][posX+1]
             except Exception:
                 pass
-        print(f"posY: {posY}, posX: {posX}, cur: {cur}, direction: {directions[dirPos]}")
         try:
             db[posY][posX] = cur
         except KeyError:
-            print("keyError")
             db[posY] = {posX: cur}
-        for key, line in sorted(list(db.items())):
-            for _, p in sorted(line.items()):
-                print(p, end=" ")
-            print()
     return cur
 
 
